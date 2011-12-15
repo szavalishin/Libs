@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011.12.09 18:08:41.982.cpp,C:\Users\Etti\Documents\RAD Studio\Projects\Unit1.cpp=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Main.cpp</Transaction>
+    <Transaction>2011.12.09 18:08:41.982.h,C:\Users\Etti\Documents\RAD Studio\Projects\Unit1.h=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Main.h</Transaction>
+    <Transaction>2011.12.09 18:08:41.982.dfm,C:\Users\Etti\Documents\RAD Studio\Projects\Unit1.dfm=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Main.dfm</Transaction>
+    <Transaction>2011.12.09 18:08:48.859.cbproj,C:\Users\Etti\Documents\RAD Studio\Projects\Project1.cbproj=C:\Etti\Uni\Ruby\Libs\.LibReader\LibReader.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
