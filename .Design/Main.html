@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Libs</title>
+
+<style>
+#Header{
+	background:#FFF;
+}
+#MenuItem{
+	padding-right:20px;	
+}
+#LoginForm{
+	border:medium;
+	border-color:#00F;
+	border-radius:2px;
+	border-style:outset;
+}
+#Main{
+	border:#00F;
+	padding-top:30px;
+}
+#MainCaption{
+	font-size:20pt;
+}
+#MainText{
+		padding-left:10px;
+}
+#AboutText{
+	font-size:9pt;
+}
+</style>
+
+</head>
+
+<body>
+	<table id="Header" width="100%">
+        <tr>
+            <td width="10%" align="center" style="float:left"> 
+            	<a href="#"><img src="img/Logo.png" /></a>
+            </td>
+            <td width="50%" valign="bottom" align="center">
+            	
+                <!-- Главное меню -->
+                <span id="MenuItem">
+                	<a href="#"> Главная </a>
+                </span>
+				<span id="MenuItem">
+                	<a href="#"> Главная </a>
+                </span>
+            
+            </td>
+            <td width="40%" align="center">
+            	<form>
+                	<table id="LoginForm">
+                	<tr>
+   						<td align="center"><i>Логин:</i></td> 
+                		<td align="left"><input type="text" maxlength="25" name="text" width="100%" />				    </td>
+                    </tr>
+                	<tr>
+                    	<td align="center"><i>Пароль:</i> </td>
+                		<td align="left"><input type="password" maxlength="25" name="pass" width="100%" />         		</td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2" align="center">
+                		<p><input type="submit" value="Вход" width="100px"></p>
+                		</td>
+                    </tr>
+                    </table>
+                </form>
+            </td>
+    	</tr>
+    </table>
+    
+    <hr color="#0099FF" />
+    
+    <div style="padding-top:30px;">
+    </div>
+    
+    <table id="Main" width="100%" border="1px">
+    	<tr>
+        	<td width="20%">
+            </td>
+            <td width="80%" style="border-left:1px;">
+            	<div id="MainCaption" align="center">
+                	<b><ul>
+                    	<em>Caption </em>
+               	  </ul></b>
+                </div>
+                <div id="MainText">
+                	Основной текст<br />
+                    Бла бла бла
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <table id="About" width="100%" >
+    	<tr>
+        	<td width="50%" align="center">
+            	<div id="AboutText">
+                	<p>Фигня какая то внизу</p>
+                </div>
+            </td>
+    </table>
+</body>
+</html>
