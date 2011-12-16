@@ -1,0 +1,21 @@
+<h1>Our page</h1>
+<p>Hello world!</p>
+
+<%= pluralize User.logged_in.count, "user" %> currently logged in<br /> <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
+
+<% if current_user %>
+   Username: <%=h current_user.username %>
+   <%= link_to "Logout", :logout%>
+<% else %>
+   <%= link_to 'New User', new_user_path %>
+   <%= yield :user_session %>
+   <%= link_to "Login", :login %>
+<% end %>                       
+
+<% if !current_user %>
+  <%= link_to "Register", new_account_path %> |
+  <%= link_to "Log In", new_user_session_path %> |
+<% else %>
+  <%= link_to "My Account", account_path %> |
+  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+<% end %>

@@ -1,0 +1,3087 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-12-16 19:05:51 +0400
+Served asset /rails.png - 200 OK (148ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-12-16 19:14:29 +0400
+Served asset /rails.png - 304 Not Modified (0ms)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (115.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (77.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUserSessions (20111216161639)
+  [1m[35m (1.0ms)[0m  CREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35m (0.0ms)[0m  CREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_sessions_on_session_id')
+  [1m[36m (0.0ms)[0m  [1mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111216161639')
+Migrating to CreateUsers (20111216162308)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "name" varchar(255) DEFAULT '' NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111216162308')
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("sessions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_sessions_on_updated_at')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-12-16 20:40:25 +0400
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 20:45:39 +0400
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (62.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 20:47:44 +0400
+
+NameError (undefined local variable or method `map' for #<ActionDispatch::Routing::Mapper:0x3e57dd8>):
+  config/routes.rb:68:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (63.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (74.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 20:51:49 +0400
+
+NameError (undefined local variable or method `map' for #<ActionDispatch::Routing::Mapper:0x3709ff8>):
+  config/routes.rb:68:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/pages/home" for 127.0.0.1 at 2011-12-16 20:51:59 +0400
+
+ActionController::RoutingError (No route matches [GET] "/pages/home"):
+  
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/layouts/application" for 127.0.0.1 at 2011-12-16 20:53:40 +0400
+
+ActionController::RoutingError (No route matches [GET] "/layouts/application"):
+  
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:09:15 +0400
+
+ArgumentError (missing :action):
+  config/routes.rb:53:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:10:21 +0400
+
+ActionController::RoutingError (undefined method `filter_parameter_logging' for ApplicationController:Class):
+  app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:11:56 +0400
+
+ActionController::RoutingError (undefined method `filter_parameter_logging' for ApplicationController:Class):
+  app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:20:55 +0400
+
+ActionController::RoutingError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/application_controller.rb:7:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:22:48 +0400
+
+ActionController::RoutingError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/application_controller.rb:7:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:25:38 +0400
+
+ActionController::RoutingError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/application_controller.rb:7:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:25:39 +0400
+
+ActionController::RoutingError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/application_controller.rb:7:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:25:39 +0400
+
+ActionController::RoutingError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/application_controller.rb:7:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/home_controller.rb:1:in `<top (required)>'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:26:23 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.0ms)
+Compiled application.css  (5ms)  (pid 7112)
+Compiled home.css  (60ms)  (pid 7112)
+Compiled user_sessions.css  (31ms)  (pid 7112)
+Compiled users.css  (62ms)  (pid 7112)
+Compiled application.js  (12ms)  (pid 7112)
+Compiled jquery.js  (16ms)  (pid 7112)
+Compiled jquery_ujs.js  (1ms)  (pid 7112)
+Compiled home.js  (579ms)  (pid 7112)
+Compiled user_sessions.js  (394ms)  (pid 7112)
+Compiled users.js  (374ms)  (pid 7112)
+Completed 200 OK in 2858ms (Views: 2858.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /user_sessions.js - 200 OK (18ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /users.js - 200 OK (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /home.css - 200 OK (4ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /user_sessions.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /home.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /jquery.js - 200 OK (31ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /users.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /application.js - 200 OK (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /users.css - 200 OK (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:26:26 +0400
+Served asset /users.css - 200 OK (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:33:08 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (141.0ms)
+Completed 500 Internal Server Error in 155ms
+
+ActionView::Template::Error (uninitialized constant Authlogic):
+    1: <h1>Our page</h1>
+    2: <p>Hello world!</p>
+    3: <% if current_user %>
+    4:    <%=h current_user.username %>
+    5: <% end %>
+  app/models/user_session.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:15:in `current_user_session'
+  app/controllers/application_controller.rb:20:in `current_user'
+  app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___274764307_33244944'
+
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered vendor/bundle/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:36:05 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (473.0ms)
+Cache for Asset (application.js) is stale
+D:/Mephi-Dev/git/Libs/vendor/bundle/ruby/1.9.1/gems/jquery-rails-1.0.17/vendor/assets/javascripts/jquery.js isn't in paths: D:/Mephi-Dev/git/Libs/app/assets/images, D:/Mephi-Dev/git/Libs/app/assets/javascripts, D:/Mephi-Dev/git/Libs/app/assets/stylesheets, D:/Mephi-Dev/git/Libs/vendor/assets/stylesheets, D:/Mephi-Dev/git/Libs/authlogic/ruby/1.9.1/gems/jquery-rails-1.0.17/vendor/assets/javascripts
+Compiled application.js  (9ms)  (pid 8476)
+Compiled jquery.js  (12ms)  (pid 8476)
+Compiled jquery_ujs.js  (2ms)  (pid 8476)
+Completed 200 OK in 1026ms (Views: 1024.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:36:11 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:36:11 +0400
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:36:11 +0400
+Served asset /user_sessions.css - 200 OK (24ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:36:11 +0400
+Served asset /users.css - 200 OK (4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 73ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /home.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /home.css - 200 OK (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /user_sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:43:01 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:43:04 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (188.0ms)
+Completed 500 Internal Server Error in 225ms
+
+ActionView::Template::Error (Missing partial shared/error_messages with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+    7:   <%= f.text_field :email %><br />
+    8:   <br />
+  app/views/user_sessions/new.html.erb:5:in `block in _app_views_user_sessions_new_html_erb__753392169_34228380'
+  app/views/user_sessions/new.html.erb:4:in `_app_views_user_sessions_new_html_erb__753392169_34228380'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:46:44 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 67ms
+
+ActionView::Template::Error (Missing partial shared/error_messages with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   # <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+    7:   <%= f.text_field :email %><br />
+    8:   <br />
+  app/views/user_sessions/new.html.erb:5:in `block in _app_views_user_sessions_new_html_erb__753392169_33720204'
+  app/views/user_sessions/new.html.erb:4:in `_app_views_user_sessions_new_html_erb__753392169_33720204'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 68ms (Views: 21.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:46:59 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:47:12 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (Missing partial shared/error_messages with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+    7:   <%= f.text_field :email %><br />
+    8:   <br />
+  app/views/user_sessions/new.html.erb:5:in `block in _app_views_user_sessions_new_html_erb__753392169_34020192'
+  app/views/user_sessions/new.html.erb:4:in `_app_views_user_sessions_new_html_erb__753392169_34020192'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:52:20 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered shared/_error_messages.html.erb (3.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= form_for(@user) do |f| %>  
+    2:   <%= render "shared/error_messages", :target => @user %>  
+    3:   <div class="field">  
+    4:     <%= f.label :name %><br />  
+  app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__690328597_34060740'
+  app/views/user_sessions/new.html.erb:5:in `block in _app_views_user_sessions_new_html_erb__753392169_34020192'
+  app/views/user_sessions/new.html.erb:4:in `_app_views_user_sessions_new_html_erb__753392169_34020192'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 68ms (Views: 25.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:07 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 51ms (Views: 25.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:54:10 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 55ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:58:57 +0400
+Served asset /user_sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:13 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:14 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 82ms (Views: 79.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:20 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered shared/_error_messages.html.erb (0.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 55ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /home.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 21:59:22 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:05:18 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 44ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:07:36 +0400
+
+NameError (undefined local variable or method `map' for #<ActionDispatch::Routing::Mapper:0x404e3c8>):
+  config/routes.rb:54:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:07:47 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 79ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:10:23 +0400
+
+ActionController::RoutingError (undefined method `filter_parameter_logging' for ApplicationController:Class):
+  app/controllers/application_controller.rb:7:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:4:in `<top (required)>'
+  app/controllers/user_sessions_controller.rb:1:in `<top (required)>'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:11:16 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:12:15 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:12:17 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 63ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:15:31 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 70ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:15:35 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (79.0ms)
+Completed 500 Internal Server Error in 93ms
+
+ActionView::Template::Error (undefined local variable or method `form_for_user_session' for #<#<Class:0x4150350>:0x4155c30>):
+    4:    Username: <%=h current_user.username %>
+    5:    <%= link_to "Logout", :logout%>
+    6: <% else %>
+    7:    <%= form_for_user_session %>
+    8:    <%= link_to "Login", :login %>
+    9: <% end %>                       
+  app/views/home/index.html.erb:7:in `_app_views_home_index_html_erb__351271438_34252824'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 60ms (Views: 59.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /home.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:16:01 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:16:05 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:17:54 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:17:54 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:54 +0400
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:54 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:54 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:55 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:55 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 71ms (Views: 69.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /home.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:17:56 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:18:24 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 77ms (Views: 76.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:18:25 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:18:26 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: # app/views/user_sessions/new.html.erb
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:21:45 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: # app/views/user_sessions/new.html.erb
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:21:49 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 73ms (Views: 71.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:00 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 78ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:22:13 +0400
+Served asset /users.css - 200 OK (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:23:04 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:05 +0400
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:23:06 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: # app/views/user_sessions/new.html.erb
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+  app/controllers/user_sessions_controller.rb:8:in `new'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:20 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 73ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /users.css - 200 OK (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:21 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:22 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:23:22 +0400
+Served asset /user_sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:25:04 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /home.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:25:05 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-12-16 22:25:06 +0400
+  Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 19ms
+
+ActionView::MissingTemplate (Missing template users/new, application/new with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:28:27 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (55.0ms)
+Completed 500 Internal Server Error in 70ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    23:     <th></th>
+    24:   </tr>
+    25: 
+    26: <% @users.each do |user| %>
+    27:   <tr>
+    28:     <td><%= user.username %></td>
+    29:     <td><%= user.email %></td>
+  app/views/home/index.html.erb:26:in `_app_views_home_index_html_erb__351271438_34195944'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:29:49 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 79ms (Views: 78.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:29:49 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:29:49 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:29:49 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:29:49 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:29:49 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:29:49 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:29:50 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:29:50 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:29:50 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:29:50 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:29:50 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-12-16 22:29:52 +0400
+  Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 19ms
+
+ActionView::MissingTemplate (Missing template users/new, application/new with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:29:54 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 60ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: # app/views/user_sessions/new.html.erb
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-16 22:30:25 +0400
+
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:33 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 95ms (Views: 93.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-12-16 22:33:34 +0400
+  Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 19ms
+
+ActionView::MissingTemplate (Missing template users/new, application/new with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:33:40 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: # app/views/user_sessions/new.html.erb
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:33:42 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: # app/views/user_sessions/new.html.erb
+    2: <h1>Login</h1>
+    3: 
+    4: <% form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+    5:   <%= render "shared/error_messages", :target => @user_session %>
+    6:   <%= f.label :email %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34270176'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:41:18 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 44ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:41:22 +0400
+Served asset /user_sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:41:24 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 52ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:42:25 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 43ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+  Processing by HomeController#index as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (last_request_at > '2011-12-16 18:32:31.135789')[0m
+Rendered home/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /user_sessions.css - 200 OK (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:42:31 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:43:57 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 77ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:43:59 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 66ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:44:02 +0400
+  Processing by HomeController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (last_request_at > '2011-12-16 18:34:02.610021')
+Rendered home/index.html.erb within layouts/application (57.0ms)
+Completed 200 OK in 78ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:44:02 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:44:02 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:44:02 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:44:02 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:44:02 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:44:04 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 69ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2011-12-16 22:44:06 +0400
+  Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 38ms
+
+ActionView::MissingTemplate (Missing template users/new, application/new with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-12-16 22:44:07 +0400
+  Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 19ms
+
+ActionView::MissingTemplate (Missing template users/new, application/new with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "D:/Mephi-Dev/git/Libs/app/views"
+):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:44:09 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 43ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:44:12 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:44:13 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 44ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:44:15 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:50:00 +0400
+
+ArgumentError (missing :action):
+  config/routes.rb:67:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:50:10 +0400
+
+ArgumentError (missing :action):
+  config/routes.rb:67:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:50:10 +0400
+  Processing by HomeController#index as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (last_request_at > '2011-12-16 18:40:10.980090')[0m
+Rendered home/index.html.erb within layouts/application (61.0ms)
+Completed 500 Internal Server Error in 76ms
+
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"users"}):
+    7:    Username: <%=h current_user.username %>
+    8:    <%= link_to "Logout", :logout%>
+    9: <% else %>
+    10:    <%= link_to 'New User', new_user_path %>
+    11:    <%= yield :user_session %>
+    12:    <%= link_to "Login", :login %>
+    13: <% end %>                       
+  app/views/home/index.html.erb:10:in `_app_views_home_index_html_erb__351271438_29978196'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:50:11 +0400
+  Processing by HomeController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (last_request_at > '2011-12-16 18:40:11.934145')
+Rendered home/index.html.erb within layouts/application (59.0ms)
+Completed 500 Internal Server Error in 77ms
+
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"users"}):
+    7:    Username: <%=h current_user.username %>
+    8:    <%= link_to "Logout", :logout%>
+    9: <% else %>
+    10:    <%= link_to 'New User', new_user_path %>
+    11:    <%= yield :user_session %>
+    12:    <%= link_to "Login", :login %>
+    13: <% end %>                       
+  app/views/home/index.html.erb:10:in `_app_views_home_index_html_erb__351271438_29978196'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:50:14 +0400
+  Processing by HomeController#index as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (last_request_at > '2011-12-16 18:40:14.981319')[0m
+Rendered home/index.html.erb within layouts/application (60.0ms)
+Completed 500 Internal Server Error in 75ms
+
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"users"}):
+    7:    Username: <%=h current_user.username %>
+    8:    <%= link_to "Logout", :logout%>
+    9: <% else %>
+    10:    <%= link_to 'New User', new_user_path %>
+    11:    <%= yield :user_session %>
+    12:    <%= link_to "Login", :login %>
+    13: <% end %>                       
+  app/views/home/index.html.erb:10:in `_app_views_home_index_html_erb__351271438_29978196'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:50:31 +0400
+  Processing by HomeController#index as HTML
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE (last_request_at > '2011-12-16 18:40:32.128300')
+Rendered home/index.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 78ms (Views: 77.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /home.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:50:32 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:50:37 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:50:48 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:50:48 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 52ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:50:49 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 44ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-12-16 22:52:10 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+  Processing by HomeController#index as HTML
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE (last_request_at > '2011-12-16 18:42:16.689280')[0m
+Rendered home/index.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /home.css - 200 OK (0ms)
+
+
+Started GET "/assets/user_sessions.css?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /user_sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2011-12-16 22:52:16 +0400
+Served asset /users.css - 200 OK (0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:52:19 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:52:29 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 64ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:52:32 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 62ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 22:53:13 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 23:01:31 +0400
+
+NoMethodError (undefined method `login' for #<ActionDispatch::Routing::Mapper:0x417ef10>):
+  config/routes.rb:67:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 23:02:02 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 76ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"user_sessions"}):
+    1: <h1>Login</h1>
+    2: 
+    3: <% form_for @user_session, :url => user_session_path do |f| %>
+    4:   <%= f.error_messages %>
+    5:   <%= f.label :login %><br />
+    6:   <%= f.text_field :login %><br />
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb__753392169_34118424'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 23:11:27 +0400
+
+NameError (uninitialized constant MyProject):
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-12-16 23:13:03 +0400
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/_form.html.erb (5.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 74ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /all.css - 404 Not Found (28ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery-1.5.1.min" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /jquery-1.5.1.min - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-1.5.1.min"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui-1.8.13.custom.min.js" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /jquery-ui-1.8.13.custom.min.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-ui-1.8.13.custom.min.js"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery.rails" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /jquery.rails - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery.rails"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:13 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/user_sessions/" for 127.0.0.1 at 2011-12-16 23:13:16 +0400
+  Processing by UserSessionsController#index as HTML
+Rendered user_sessions/index.html.erb within layouts/application (23.0ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    9:     <th></th>
+    10:   </tr>
+    11: 
+    12: <% @user_sessions.each do |user_session| %>
+    13:   <tr>
+    14:     <td><%= user_session.email %></td>
+    15:     <td><%= user_session.password %></td>
+  app/views/user_sessions/index.html.erb:12:in `_app_views_user_sessions_index_html_erb__386352461_34508196'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" 
+Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 60ms (Views: 58.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /all.css - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.5.1.min" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /jquery-1.5.1.min - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-1.5.1.min"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-ui-1.8.13.custom.min.js" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /jquery-ui-1.8.13.custom.min.js - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-ui-1.8.13.custom.min.js"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery.rails" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /jquery.rails - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery.rails"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:40 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (20.0ms)
+Rendered users/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 83ms (Views: 81.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /all.css - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.5.1.min" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /jquery-1.5.1.min - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-1.5.1.min"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.8.13.custom.min.js" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /jquery-ui-1.8.13.custom.min.js - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-ui-1.8.13.custom.min.js"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.rails" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /jquery.rails - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery.rails"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 23:13:42 +0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-12-16 23:13:55 +0400
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ybsJtJHhiEL2FgD5tpSaChb1nxWw7BelmqNq5Lmln8=", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('test@test.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."persistence_token" = '06c8c3fc9dae830cbedaf91f68a3befbe4e7f49448e9304d4193776bf8177aaf91e9f2c90fb1d08dcc4dbe50208c24196fe2cd0477fe199acf18529ff3925d15' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."single_access_token" = 'PM4G141GyPowmQcMM' LIMIT 1[0m
+Binary data inserted for `string` type on column `crypted_password`
+Binary data inserted for `string` type on column `current_login_ip`
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "users" ("created_at", "crypted_password", "current_login_at", "current_login_ip", "email", "failed_login_count", "last_login_at", "last_login_ip", "last_request_at", "login_count", "name", "password_salt", "perishable_token", "persistence_token", "single_access_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 16 Dec 2011 19:13:56 UTC +00:00], ["crypted_password", "6d016034faab755a6a31f7d8a916372efeb8f93700eb8060a711484a96b760cf2a0bfad9f2440645df9536c15442e484682fc3932ac72aa78e9b4b32c5f04b44"], ["current_login_at", Fri, 16 Dec 2011 19:13:56 UTC +00:00], ["current_login_ip", "127.0.0.1"], ["email", "test@test.com"], ["failed_login_count", 0], ["last_login_at", nil], ["last_login_ip", nil], ["last_request_at", Fri, 16 Dec 2011 19:13:56 UTC +00:00], ["login_count", 1], ["name", ""], ["password_salt", "Jxep4sSCIgtUMmItveMn"], ["perishable_token", "p3fa15T1xpZmL8DIxce"], ["persistence_token", "06c8c3fc9dae830cbedaf91f68a3befbe4e7f49448e9304d4193776bf8177aaf91e9f2c90fb1d08dcc4dbe50208c24196fe2cd0477fe199acf18529ff3925d15"], ["single_access_token", "PM4G141GyPowmQcMM"], ["updated_at", Fri, 16 Dec 2011 19:13:56 UTC +00:00]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 424ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-12-16 23:13:56 +0400
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered users/show.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined method `first_name' for #<User:0x38ffe08>):
+    2: 
+    3: <p>
+    4:   <b>First name:</b>
+    5:   <%= @user.first_name %>
+    6: </p>
+    7: 
+    8: <p>
+  app/views/users/show.html.erb:5:in `_app_views_users_show_html_erb___980552760_29979168'
+  app/controllers/users_controller.rb:18:in `show'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ybsJtJHhiEL2FgD5tpSaChb1nxWw7BelmqNq5Lmln8=", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  SELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('test@test.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."persistence_token" = 'ec5d4f4920333ca68569f57fc0bb7ac41962ee5d91aec6616be18d8d841ab289c2b869452f7e18065d24df1fb982983e7ef69ff9aac47b3c548b87c7ae92262e' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."single_access_token" = 'KnkQIZXreEpdqRqVe1y' LIMIT 1
+Rendered users/_form.html.erb (4.0ms)
+Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 65ms (Views: 44.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /all.css - 404 Not Found (22ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery-1.5.1.min" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /jquery-1.5.1.min - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-1.5.1.min"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/user_sessions.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /user_sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.8.13.custom.min.js" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /jquery-ui-1.8.13.custom.min.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-ui-1.8.13.custom.min.js"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.rails" for 127.0.0.1 at 2011-12-16 23:17:11 +0400
+Served asset /jquery.rails - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery.rails"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-12-16 23:17:37 +0400
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Rendered users/index.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (undefined method `first_name' for #<User:0x402c948>):
+    11: 
+    12: <% @users.each do |user| %>
+    13:   <tr>
+    14:     <td><%= user.first_name %></td>
+    15:     <td><%= user.last_name %></td>
+    16:     <td><%= link_to 'Show', user %></td>
+    17:     <td><%= link_to 'Edit', edit_user_path(user) %></td>
+  app/views/users/index.html.erb:14:in `block in _app_views_users_index_html_erb___450302005_34461624'
+  app/views/users/index.html.erb:12:in `each'
+  app/views/users/index.html.erb:12:in `_app_views_users_index_html_erb___450302005_34461624'
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2011-12-16 23:17:46 +0400
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/_form.html.erb (3.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 92ms (Views: 47.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/all.css" for 127.0.0.1 at 2011-12-16 23:17:46 +0400
+Served asset /all.css - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/all.css"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:46 +0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery-1.5.1.min" for 127.0.0.1 at 2011-12-16 23:17:47 +0400
+Served asset /jquery-1.5.1.min - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-1.5.1.min"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-12-16 23:17:47 +0400
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.8.13.custom.min.js" for 127.0.0.1 at 2011-12-16 23:17:47 +0400
+Served asset /jquery-ui-1.8.13.custom.min.js - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery-ui-1.8.13.custom.min.js"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/assets/jquery.rails" for 127.0.0.1 at 2011-12-16 23:17:47 +0400
+Served asset /jquery.rails - 404 Not Found (29ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/jquery.rails"):
+  
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-12-16 23:17:54 +0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ybsJtJHhiEL2FgD5tpSaChb1nxWw7BelmqNq5Lmln8=", "user_session"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}, "commit"=>"Create User session"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'test@test.com') LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mUPDATE "users" SET "login_count" = 2, "last_login_at" = '2011-12-16 19:13:56.014598', "current_login_at" = '2011-12-16 19:17:54.645246', "last_login_ip" = '127.0.0.1', "last_request_at" = '2011-12-16 19:17:54.645246', "perishable_token" = 'WRLhvW1WDqi4BdRt9aoT', "updated_at" = '2011-12-16 19:17:54.646247' WHERE "users"."id" = 1[0m
+Redirected to 
+Completed 500 Internal Server Error in 167ms
+
+NoMethodError (undefined method `destroyed?' for #<UserSession:0x410e758>):
+  app/controllers/user_sessions_controller.rb:20:in `block (2 levels) in create'
+  app/controllers/user_sessions_controller.rb:18:in `create'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2011-12-16 23:27:43 +0400
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ybsJtJHhiEL2FgD5tpSaChb1nxWw7BelmqNq5Lmln8=", "user_session"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}, "commit"=>"Create User session"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'test@test.com') LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mUPDATE "users" SET "login_count" = 3, "last_login_at" = '2011-12-16 19:17:54.645246', "current_login_at" = '2011-12-16 19:27:43.938952', "last_request_at" = '2011-12-16 19:27:43.938952', "perishable_token" = 'hwc1ObpeuuBbNmwpvJ2Y', "updated_at" = '2011-12-16 19:27:43.940952' WHERE "users"."id" = 1[0m
+Redirected to 
+Completed 500 Internal Server Error in 145ms
+
+NoMethodError (undefined method `destroyed?' for #<UserSession:0x416b5a8>):
+  app/controllers/user_sessions_controller.rb:20:in `block (2 levels) in create'
+  app/controllers/user_sessions_controller.rb:18:in `create'
+
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered authlogic/ruby/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.0ms)
