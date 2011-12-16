@@ -18,6 +18,7 @@
 #include <SHDocVw.hpp>
 #include <Dialogs.hpp>
 #include <ExtDlgs.hpp>
+#include <ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TfMain : public TForm
 {
@@ -36,6 +37,13 @@ __published:	// IDE-managed Components
 	TListView *lvLib;
 	TWebBrowser *wbLibs;
 	TOpenTextFileDialog *odOpenBook;
+	TGroupBox *gbAuth;
+	TLabeledEdit *leLogin;
+	TLabeledEdit *lePass;
+	TButton *btnRegister;
+	TCheckBox *cbRememberPass;
+	TGroupBox *gbServer;
+	TLabeledEdit *leServer;
 	void __fastcall sbOpenBookClick(TObject *Sender);
 	void __fastcall odOpenBookCanClose(TObject *Sender, bool &CanClose);
 	void __fastcall sbDeleteBookClick(TObject *Sender);
@@ -44,9 +52,10 @@ __published:	// IDE-managed Components
 	void __fastcall sbBookmarkClick(TObject *Sender);
 	void __fastcall lvLibDblClick(TObject *Sender);
 	void __fastcall sbBackClick(TObject *Sender);
-	void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall FormShow(TObject *Sender);
+	void __fastcall leServerExit(TObject *Sender);
+	void __fastcall btnRegisterClick(TObject *Sender);
 private:	// User declarations
 	TListItem* CurBook;
 public:		// User declarations

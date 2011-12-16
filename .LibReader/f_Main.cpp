@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "f_Main.h"
+#include "f_Register.h"
 #include <IOUtils.hpp>
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -56,7 +57,7 @@ void __fastcall TfMain::sbDeleteBookClick(TObject *Sender) {
 void __fastcall TfMain::pcMenuPagesMouseUp
 	(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y) {
 	if (pcMenuPages->ActivePage == tsWeb)
-		wbLibs->Navigate("http://localhost:3000/");
+		wbLibs->Navigate(leServer->Text);
 }
 // ---------------------------------------------------------------------------
 
@@ -75,6 +76,7 @@ void __fastcall TfMain::lvLibDblClick(TObject *Sender)
 		pcMenuPages->ActivePage = tsReading;
 
 		CurBook = lvLib->Selected;
+		lbBookName->Caption = CurBook->Caption;
 		mBook->Lines->LoadFromFile(CurBook->SubItems->Strings[0]);
 		mBook->SelStart = StrToInt(CurBook->SubItems->Strings[1]);
 		mBook->SelLength = 1;
@@ -90,12 +92,6 @@ void __fastcall TfMain::sbBackClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfMain::FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
-
-{
-	//
-}
-//---------------------------------------------------------------------------
 
 
 void __fastcall TfMain::FormClose(TObject *Sender, TCloseAction &Action)
@@ -109,6 +105,20 @@ void __fastcall TfMain::FormClose(TObject *Sender, TCloseAction &Action)
 			lvLib->Items->Item[i]->SubItems->Strings[2]);
 
 	sl->SaveToFile(ExtractFileDir(Application->ExeName) + "\\Library.lb");
+	sl->Clear();
+
+	sl->Add("Login=" + leLogin->Text);
+	if(cbRememberPass->Checked)
+		sl->Add("Pass=" + lePass->Text);
+	else
+		sl->Add("Pass=");
+	if(cbRememberPass->Checked)
+		sl->Add("RememberPass=1");
+	else
+		sl->Add("RememberPass=0");
+	sl->Add("Server=" + leServer->Text);
+
+	sl->SaveToFile(ExtractFileDir(Application->ExeName) + "\\Settings.ini");
 
 	sl->~TStringList();
 }
@@ -141,7 +151,35 @@ void __fastcall TfMain::FormShow(TObject *Sender)
 		}
 	}
 
+	sl->Clear();
+
+	if(f.Exists(ExtractFileDir(Application->ExeName) + "\\Settings.ini")){
+		sl->LoadFromFile(GetCurrentDir() + "\\Settings.ini");
+
+		leLogin->Text = sl->ValueFromIndex[0];
+		lePass->Text = sl->ValueFromIndex[1];
+		if(sl->ValueFromIndex[2] == "1")
+			cbRememberPass->Checked = true;
+		else
+            cbRememberPass->Checked = false;
+		leServer->Text = sl->ValueFromIndex[3];
+	}
+
 	sl->~TStringList();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfMain::leServerExit(TObject *Sender)
+{
+	if(leServer->Text == "")
+		leServer->Text = "localhost:3000";
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TfMain::btnRegisterClick(TObject *Sender)
+{
+	fRegister->ShowModal();
 }
 //---------------------------------------------------------------------------
 

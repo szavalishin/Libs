@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "f_Register.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TfRegister *fRegister;
+//---------------------------------------------------------------------------
+__fastcall TfRegister::TfRegister(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TfRegister::btnRegisterClick(TObject *Sender)
+{
+	if(leLogin->Text != ""){
+		ShowMessage("Введите логин");
+	}
+
+	if(lePass->Text != ""){
+		ShowMessage("Введите пароль");
+	}
+
+	if(lePass->Text != lePassConfirm->Text){
+		ShowMessage("Проверьте правильность введённого пароля");
+	}
+}
+//---------------------------------------------------------------------------

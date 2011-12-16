@@ -5,5 +5,8 @@
     <Transaction>2011.12.09 18:08:41.982.h,C:\Users\Etti\Documents\RAD Studio\Projects\Unit1.h=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Main.h</Transaction>
     <Transaction>2011.12.09 18:08:41.982.dfm,C:\Users\Etti\Documents\RAD Studio\Projects\Unit1.dfm=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Main.dfm</Transaction>
     <Transaction>2011.12.09 18:08:48.859.cbproj,C:\Users\Etti\Documents\RAD Studio\Projects\Project1.cbproj=C:\Etti\Uni\Ruby\Libs\.LibReader\LibReader.cbproj</Transaction>
+    <Transaction>2011.12.16 22:05:51.551.cpp,C:\Etti\Uni\Ruby\Libs\.LibReader\Unit1.cpp=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Register.cpp</Transaction>
+    <Transaction>2011.12.16 22:05:51.600.h,C:\Etti\Uni\Ruby\Libs\.LibReader\Unit1.h=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Register.h</Transaction>
+    <Transaction>2011.12.16 22:05:51.600.dfm,C:\Etti\Uni\Ruby\Libs\.LibReader\Unit1.dfm=C:\Etti\Uni\Ruby\Libs\.LibReader\f_Register.dfm</Transaction>
   </Transactions>
 </BorlandProject>

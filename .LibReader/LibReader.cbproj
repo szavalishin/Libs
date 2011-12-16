@@ -19,13 +19,13 @@
 			<Base>true</Base>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<LinkPackageStatics>rtl.lib;vcl.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;vclie.lib</LinkPackageStatics>
+			<OutputExt>exe</OutputExt>
 			<PackageImports>vcl.bpi;rtl.bpi;bcbie.bpi;vclx.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;vclimg.bpi;dbrtl.bpi;vcldb.bpi;vcldbx.bpi;bdertl.bpi;vcltouch.bpi;dsnap.bpi;dsnapcon.bpi;TeeUI.bpi;TeeDB.bpi;Tee.bpi;vclib.bpi;ibxpress.bpi;adortl.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;intrawebdb_100_140.bpi;Intraweb_100_140.bpi;VclSmp.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdb.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi;vclribbon.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DataSnapIndy10ServerTransport.bpi;DataSnapProviderClient.bpi;DbxClientDriver.bpi;DataSnapServer.bpi;DBXInterBaseDriver.bpi;DBXMySQLDriver.bpi;dbxcds.bpi;DBXFirebirdDriver.bpi;DBXSybaseASEDriver.bpi;DBXSybaseASADriver.bpi;DBXOracleDriver.bpi;DBXMSSQLDriver.bpi;DBXInformixDriver.bpi;DBXDb2Driver.bpi</PackageImports>
 			<Multithreaded>true</Multithreaded>
-			<AllPackageLibs>rtl.lib;vcl.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib</AllPackageLibs>
+			<AllPackageLibs>rtl.lib;vcl.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;vclie.lib</AllPackageLibs>
 			<ProjectType>CppVCLApplication</ProjectType>
 			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
-			<DynamicRTL>true</DynamicRTL>
-			<UsePackages>true</UsePackages>
 			<IncludePath>C:\Etti\Uni\Ruby\Libs\.LibReader\;$(CG_BOOST_ROOT)\boost\tr1\tr1;$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\vcl;$(CG_BOOST_ROOT);$(IncludePath)</IncludePath>
 			<ILINK_LibraryPath>C:\Etti\Uni\Ruby\Libs\.LibReader\;$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 			<BCC_wpar>false</BCC_wpar>
@@ -60,19 +60,24 @@
 			<ILINK_TranslatedLibraryPath>$(BDS)\lib\$(LANGDIR)\release;$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
 		</PropertyGroup>
 		<ItemGroup>
-			<CppCompile Include="LibReader.cpp">
-				<BuildOrder>0</BuildOrder>
-			</CppCompile>
-			<ResFiles Include="LibReader.res">
-				<ModuleName>LibReader.res</ModuleName>
-				<BuildOrder>1</BuildOrder>
-			</ResFiles>
 			<CppCompile Include="f_Main.cpp">
 				<Form>fMain</Form>
 				<DependentOn>f_Main.h</DependentOn>
 				<BuildOrder>2</BuildOrder>
 			</CppCompile>
+			<ResFiles Include="LibReader.res">
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="LibReader.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="f_Register.cpp">
+				<Form>fRegister</Form>
+				<DependentOn>f_Register.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
 			<FormResources Include="f_Main.dfm"/>
+			<FormResources Include="f_Register.dfm"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>
